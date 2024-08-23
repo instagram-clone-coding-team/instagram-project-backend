@@ -1,36 +1,26 @@
-package flog.instagram_clone_coding.domain;
+package flog.instagram_clone_coding.controller;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
-
-@Entity
-public class Users {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(unique = true)
+public class UserCreateForm {
+    @NotEmpty @Email
     private String email;
-
-    @Column
+    @NotEmpty
     private String fullName;
-
-    @Column(unique = true)
+    @NotEmpty @Size(max = 30)
     private String username;
-
+    @NotEmpty
     private String password;
-
-    public Long getId() {
-        return id;
-    }
 
     public String getEmail() {
         return email;
     }
-
     public String getFullName() {
         return fullName;
     }
-
     public String getUsername() {
         return username;
     }
@@ -38,10 +28,6 @@ public class Users {
     public String getPassword() {
         return password;
     }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -57,4 +43,5 @@ public class Users {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
