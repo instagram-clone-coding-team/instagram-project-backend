@@ -22,9 +22,9 @@ public class UserController {
     }
 
     @GetMapping("/signup")
-    @ResponseBody
-    public String signup() {
-        return "";
+//    @ResponseBody
+    public String signup(UserCreateForm userCreateForm) {
+        return "signup_form";
     }
 
     @PostMapping("/signup")
