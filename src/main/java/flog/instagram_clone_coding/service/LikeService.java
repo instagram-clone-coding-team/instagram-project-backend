@@ -1,6 +1,6 @@
 package flog.instagram_clone_coding.service;
 
-import flog.instagram_clone_coding.domain.Like;
+import flog.instagram_clone_coding.domain.Likes;
 import flog.instagram_clone_coding.domain.Users;
 import flog.instagram_clone_coding.repository.LikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +14,16 @@ public class LikeService {
     @Autowired
     private LikeRepository likeRepository;
 
-    public List<Like> getLikesByUser(Users user) {
+    public List<Likes> getLikesByUser(Users user) {
         return likeRepository.findByUser(user);
     }
 
-    public List<Like> getLikesByTarget(String likeType, Long targetId) {
+    public List<Likes> getLikesByTarget(String likeType, Long targetId) {
         return likeRepository.findByLikeTypeAndTargetId(likeType, targetId);
     }
 
-    public Like addLike(Users user, String likeType, Long targetId) {
-        Like like = Like.builder()
+    public Likes addLike(Users user, String likeType, Long targetId) {
+        Likes like = Likes.builder()
                 .user(user)
                 .likeType(likeType)
                 .targetId(targetId)

@@ -45,9 +45,9 @@ public class UserController {
             bindingResult.reject("signupFailed", "이미 존재하는 사용자 입니다.");
             return "signup_form";
         } catch (Exception e){
-            System.out.println("E 2 : 중복된 회원임.");
+            System.out.println("E : 오류 발생." + e.getMessage());
 //            e.printStackTrace();
-            bindingResult.reject("signupFailed", "이미 존재하는 사용자 입니다.");
+            bindingResult.reject("signupFailed", "오류났습니다.");
             return "signup_form";
         }
         return "redirect:/";
