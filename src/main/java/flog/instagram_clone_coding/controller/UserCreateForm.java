@@ -2,10 +2,12 @@ package flog.instagram_clone_coding.controller;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class UserCreateForm {
-    @NotEmpty @Email
+    @NotEmpty
+    @Pattern(regexp="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*\\W)(?=\\S+$).{8,20}")
     private String email;
     @NotEmpty
     private String fullName;
