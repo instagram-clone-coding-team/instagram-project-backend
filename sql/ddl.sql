@@ -7,3 +7,12 @@ create table users
 
     primary key (id)
 );
+
+create table posts
+(
+    post_id BIGINT, AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT,
+    content VARCHAR(1000),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)

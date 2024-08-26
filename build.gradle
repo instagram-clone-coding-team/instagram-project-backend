@@ -21,12 +21,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // jpa
+//	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'	// swagger api
+//	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.0' // security
+
 	runtimeOnly 'com.h2database:h2' // h2 db
+	compileOnly 'org.projectlombok:lombok'	// lombok
+	annotationProcessor 'org.projectlombok:lombok'	// lombok
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+//<<<<<<< HEAD
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 	implementation 'org.springframework.boot:spring-boot-starter-security' // security
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+//=======
+	testCompileOnly 'org.projectlombok:lombok'	// lombok
+	testAnnotationProcessor 'org.projectlombok:lombok'	// lombok
+//>>>>>>> 5de1f64 (add post,postImage,bookmark,like,comment)
 }
 
 tasks.named('test') {
